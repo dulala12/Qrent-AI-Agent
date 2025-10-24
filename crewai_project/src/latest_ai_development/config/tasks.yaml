@@ -1,0 +1,22 @@
+data_compliance_task:
+  description: >
+    Compare the {data} file against the rules and restrictions
+    defined in the {limits} file, and identify all contents that violate the limits.
+  expected_output: >
+    A list of all non-compliant items in the {data} file.
+  agent: data_compliance_agent
+
+inquiry_task:
+  description: >
+    Guide the user to modify the {data} requirements so that the {data} requirements comply with {limits}
+  expected_output: >
+    JSON file consistent with {data} format
+  agent: inquiry_agent
+
+reporting_task:
+  description: >
+    Create a report based on the {data} file and the {limits} file.
+  expected_output: >
+    A report with the main topics, each with a full section of information.
+    Formatted as markdown without '```'
+  agent: reporting_agent

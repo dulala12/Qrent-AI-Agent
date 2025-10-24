@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "version": 1,
+    "saved_at": "2025-10-21T03:13:51Z"
+  },
+  "survey": {
+    "budget": {
+      "weekly_min": 300,
+      "weekly_max": 500,
+      "weekly_total": 800,
+      "bills_included": true
+    },
+    "property": {
+      "type": "2 Bedroom",
+      "furnished": false,
+      "co_rent": null,
+      "accept_overpriced": "no",
+      "accept_small": "depends"
+    },
+    "lifestyle": {
+      "commute": ">60",
+      "move_in": "2025-10-01",
+      "lease_months": 10
+    }
+  }
+}

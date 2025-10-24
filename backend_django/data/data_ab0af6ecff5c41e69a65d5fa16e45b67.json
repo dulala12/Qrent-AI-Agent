@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "version": 1,
+    "saved_at": "2025-10-24T11:07:23Z"
+  },
+  "survey": {
+    "budget": {
+      "weekly_min": 300,
+      "weekly_max": 600,
+      "weekly_total": 600,
+      "bills_included": true
+    },
+    "property": {
+      "type": "Studio",
+      "furnished": false,
+      "co_rent": "yes",
+      "accept_overpriced": "yes",
+      "accept_small": "no"
+    },
+    "lifestyle": {
+      "commute": "15",
+      "move_in": "2025-10-09",
+      "lease_months": 12
+    }
+  }
+}

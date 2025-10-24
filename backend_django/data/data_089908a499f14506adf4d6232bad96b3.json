@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "version": 1,
+    "saved_at": "2025-10-24T11:05:46Z"
+  },
+  "survey": {
+    "budget": {
+      "weekly_min": 500,
+      "weekly_max": 700,
+      "weekly_total": 700,
+      "bills_included": true
+    },
+    "property": {
+      "type": "1 Bedroom",
+      "furnished": null,
+      "co_rent": "yes",
+      "accept_overpriced": "yes",
+      "accept_small": "depends"
+    },
+    "lifestyle": {
+      "commute": "15",
+      "move_in": "2025-10-15",
+      "lease_months": 12
+    }
+  }
+}
