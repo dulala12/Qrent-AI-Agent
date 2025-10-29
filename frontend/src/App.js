@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './App.css';
-import Questionnaire from './Questionnaire';
+import Layout from './Layout';
 import axios from 'axios';
 
 export default function App() {
@@ -51,7 +51,7 @@ export default function App() {
       </header>
       
       <main>
-        <Questionnaire onSubmit={handleSubmit} />
+        <Layout onSubmit={handleSubmit} />
         {loading && <p style={{ color: "#667eea" }}>正在提交，请稍候...</p>}
       </main>
     </div>
