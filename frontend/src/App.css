@@ -5,10 +5,21 @@
 }
 
 .App-header {
-  background-color: white;
-  padding: 20px;
+  background-color: #282c34;
+  padding: 2rem;
+  text-align: center;
+  color: white;
+  border-radius: 8px 8px 0 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin-bottom: 30px;
+}
+
+.invitation-status {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
 }
 
 .App-header h1 {

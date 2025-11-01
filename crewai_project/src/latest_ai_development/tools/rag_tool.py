@@ -2,53 +2,53 @@
 from crewai_tools import RagTool 
 import os
 
-# --- 1. ×â½ğÓëÔ¤Ëã¹¤¾ß ---
+# --- 1. ç§Ÿé‡‘ä¸é¢„ç®—å·¥å…· ---
 price_and_budget_tool = RagTool(
-    # ½¨ÒéÊ¹ÓÃ¸üÇåÎúµÄ snake_case Ãû³Æ
+    # å»ºè®®ä½¿ç”¨æ›´æ¸…æ™°çš„ snake_case åç§°
     name="price_and_budget_tool", 
-    description="ÓÃÓÚ²éÑ¯×â½ğ¡¢Ñº½ğ¡¢Ë®µç·Ñ¡¢Ô¤Ëã·ÖÅäºÍËùÓĞ²ÆÎñÏà¹ØÖªÊ¶µÄ¼ìË÷¹¤¾ß¡£",
+    description="ç”¨äºæŸ¥è¯¢ç§Ÿé‡‘ã€æŠ¼é‡‘ã€æ°´ç”µè´¹ã€é¢„ç®—åˆ†é…å’Œæ‰€æœ‰è´¢åŠ¡ç›¸å…³çŸ¥è¯†çš„æ£€ç´¢å·¥å…·ã€‚",
 )
 price_and_budget_tool.add(
     data_type="file",
-    # Â·¾¶½¨ÒéÊ¹ÓÃ os.path.join »ò / À´È·±£¿çÆ½Ì¨¼æÈİĞÔ
-    path=os.path.join("crewai_project", "knowledge", "×â½ğÓëÔ¤Ëã 298f84ca84a0802aa0c6cb8cadff4e3c.md")
+    # è·¯å¾„å»ºè®®ä½¿ç”¨ os.path.join æˆ– / æ¥ç¡®ä¿è·¨å¹³å°å…¼å®¹æ€§
+    path=os.path.join("crewai_project", "knowledge", "ç§Ÿé‡‘ä¸é¢„ç®— 298f84ca84a0802aa0c6cb8cadff4e3c.md")
 )
 
-# --- 2. ×âÔ¼Óë·¨ÂÉ¹¤¾ß ---
+# --- 2. ç§Ÿçº¦ä¸æ³•å¾‹å·¥å…· ---
 lease_and_law_tool = RagTool(
     name="lease_and_law_tool",
-    description="ÓÃÓÚ²éÑ¯×âÔ¼Ìõ¿î¡¢·¨ÂÉÔğÈÎ¡¢ºÏÍ¬ÖÕÖ¹¡¢¾À·×½â¾öµÈ·¨ÂÉÏà¹ØÎÊÌâµÄÖªÊ¶¡£",
+    description="ç”¨äºæŸ¥è¯¢ç§Ÿçº¦æ¡æ¬¾ã€æ³•å¾‹è´£ä»»ã€åˆåŒç»ˆæ­¢ã€çº çº·è§£å†³ç­‰æ³•å¾‹ç›¸å…³é—®é¢˜çš„çŸ¥è¯†ã€‚",
 )
 lease_and_law_tool.add(
     data_type="file",
-    path=os.path.join("crewai_project", "knowledge", "×âÔ¼Óë·¨ÂÉ 298f84ca84a0809b9c07d07208adc064.md")
+    path=os.path.join("crewai_project", "knowledge", "ç§Ÿçº¦ä¸æ³•å¾‹ 298f84ca84a0809b9c07d07208adc064.md")
 )
 
-# --- 3. ĞÅÏ¢Óë·ÃÎÊ¹¤¾ß ---
+# --- 3. ä¿¡æ¯ä¸è®¿é—®å·¥å…· ---
 information_and_access_tool = RagTool(
     name="information_and_access_tool",
-    description="ÓÃÓÚ²éÑ¯×â·¿ĞÅÏ¢À´Ô´¡¢ÇşµÀ¡¢¿´·¿Ô¤Ô¼¡¢Ç°ÆÚ×¼±¸µÈÏà¹ØÁ÷³ÌµÄÖªÊ¶¡£",
+    description="ç”¨äºæŸ¥è¯¢ç§Ÿæˆ¿ä¿¡æ¯æ¥æºã€æ¸ é“ã€çœ‹æˆ¿é¢„çº¦ã€å‰æœŸå‡†å¤‡ç­‰ç›¸å…³æµç¨‹çš„çŸ¥è¯†ã€‚",
 )
 information_and_access_tool.add(
     data_type="file",
-    path=os.path.join("crewai_project", "knowledge", "×â·¿Ç°ÆÚ£ºĞÅÏ¢ÓëÇşµÀ 298f84ca84a080689d83d2dcfb254ad6.md")
+    path=os.path.join("crewai_project", "knowledge", "ç§Ÿæˆ¿å‰æœŸï¼šä¿¡æ¯ä¸æ¸ é“ 298f84ca84a080689d83d2dcfb254ad6.md")
 )
 information_and_access_tool.add(
     data_type="file",
-    path=os.path.join("crewai_project", "knowledge", "crewai_project\knowledge\Èë×¡Óë¾Ó×¡ÆÚ 299f84ca84a0803993ecf6decceaa110(1).md")
+    path=os.path.join("crewai_project", "knowledge", "crewai_project\knowledge\å…¥ä½ä¸å±…ä½æœŸ 299f84ca84a0803993ecf6decceaa110(1).md")
 )
 
-# --- 4. »ù´¡ÖªÊ¶¹¤¾ß£¨¶àÎÄ¼ş¼ÓÔØ£© ---
+# --- 4. åŸºç¡€çŸ¥è¯†å·¥å…·ï¼ˆå¤šæ–‡ä»¶åŠ è½½ï¼‰ ---
 basic_knowledge_tool = RagTool(
     name="basic_knowledge_tool",
-    description="ÓÃÓÚ²éÑ¯×â·¿³£Ê¶ºÍQrent°ÄÖŞ×â·¿È«Á÷³Ì¹¥ÂÔ£¬Ìá¹©±³¾°ºÍ×ÜÌåÁ÷³ÌĞÅÏ¢¡£",
+    description="ç”¨äºæŸ¥è¯¢ç§Ÿæˆ¿å¸¸è¯†å’ŒQrentæ¾³æ´²ç§Ÿæˆ¿å…¨æµç¨‹æ”»ç•¥ï¼Œæä¾›èƒŒæ™¯å’Œæ€»ä½“æµç¨‹ä¿¡æ¯ã€‚",
 )
 basic_knowledge_tool.add(
     data_type="file",
-    path=os.path.join("crewai_project", "knowledge", "³£Ê¶×ÊÁÏ.md")
+    path=os.path.join("crewai_project", "knowledge", "å¸¸è¯†èµ„æ–™.md")
 )
 basic_knowledge_tool.add(
     data_type="file",
-    path=os.path.join("crewai_project", "knowledge", "Qrent°ÄÖŞ×â·¿È«Á÷³Ì¹¥ÂÔ250417°æ(1).pdf")
+    path=os.path.join("crewai_project", "knowledge", "Qrentæ¾³æ´²ç§Ÿæˆ¿å…¨æµç¨‹æ”»ç•¥250417ç‰ˆ(1).pdf")
 )
 

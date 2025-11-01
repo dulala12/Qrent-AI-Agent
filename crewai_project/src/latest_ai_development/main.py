@@ -17,7 +17,7 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
 def get_inputs():
     """
-    自动查找最新的 data.json 和 limits.json 文件，并返回输入字典。
+    自动查找最新的 data.json 文件，并返回输入字典。
     """
     # 自动查找 backend_django/data 下的最新 data_*.json 文件
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -29,10 +29,6 @@ def get_inputs():
     else:
         # 如果没找到则使用默认路径
         data_file = 'data.json'
-
-    # limits.json 与 data 文件在同一目录下
-    data_dir = os.path.dirname(data_file)
-    limits_file = os.path.join(data_dir, 'limits.json')
 
     def load_json(path):
         if os.path.exists(path):
@@ -47,11 +43,9 @@ def get_inputs():
             return None
 
     data_content = load_json(data_file)
-    limits_content = load_json(limits_file)
 
     return {
-        'data': data_content,
-        'limits': limits_content
+        'data': data_content
     }
 
 def run():
@@ -60,6 +54,10 @@ def run():
     """
     # 自动查找最新的data.json文件（按生成时间排序）
     inputs = get_inputs()
+    
+    # 确保inputs中只包含data键
+    if 'limits' in inputs:
+        del inputs['limits']
     
     try:
         LatestAiDevelopment().crew().kickoff(inputs=inputs)

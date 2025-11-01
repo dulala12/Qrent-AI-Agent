@@ -1,0 +1,47 @@
+[
+  {
+    "code": "QRTEST-SPGHVQLZ",
+    "created_at": "2025-10-29T09:49:55.271212+00:00",
+    "expires_at": "2026-01-27T09:49:55.271212+00:00",
+    "max_uses": 100,
+    "used_count": 0,
+    "remaining_uses": 100,
+    "status": "有效"
+  },
+  {
+    "code": "QRTEST-T3HBV1U0",
+    "created_at": "2025-10-29T09:49:55.262212+00:00",
+    "expires_at": "2026-01-27T09:49:55.262212+00:00",
+    "max_uses": 100,
+    "used_count": 0,
+    "remaining_uses": 100,
+    "status": "有效"
+  },
+  {
+    "code": "QRTEST-PLJWUVQ7",
+    "created_at": "2025-10-29T09:49:55.253211+00:00",
+    "expires_at": "2026-01-27T09:49:55.253211+00:00",
+    "max_uses": 100,
+    "used_count": 0,
+    "remaining_uses": 100,
+    "status": "有效"
+  },
+  {
+    "code": "QRTEST-FWSSILP6",
+    "created_at": "2025-10-29T09:49:55.244211+00:00",
+    "expires_at": "2026-01-27T09:49:55.244211+00:00",
+    "max_uses": 100,
+    "used_count": 0,
+    "remaining_uses": 100,
+    "status": "有效"
+  },
+  {
+    "code": "QRTEST-R7RVQSWE",
+    "created_at": "2025-10-29T09:49:55.233212+00:00",
+    "expires_at": "2026-01-27T09:49:55.233212+00:00",
+    "max_uses": 100,
+    "used_count": 1,
+    "remaining_uses": 99,
+    "status": "有效"
+  }
+]

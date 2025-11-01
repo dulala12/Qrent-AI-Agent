@@ -1,7 +1,22 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
+from crewai.tools import tool
 from typing import List
+from latest_ai_development.tools.rag_tool import (
+    price_and_budget_tool,
+    lease_and_law_tool,
+    information_and_access_tool,
+    basic_knowledge_tool
+)
+
+# 确保工具在模块级别可用，以便crewai可以通过名称找到它们
+__all__ = [
+    'price_and_budget_tool',
+    'lease_and_law_tool',
+    'information_and_access_tool',
+    'basic_knowledge_tool'
+]
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
@@ -25,6 +40,7 @@ class LatestAiDevelopment():
     def data_compliance_agent(self) -> Agent:
         return Agent(
             config=self.agents_config['data_compliance_agent'], # type: ignore[index]
+            tools=[price_and_budget_tool, basic_knowledge_tool],
             verbose=True
         )
 
@@ -32,6 +48,7 @@ class LatestAiDevelopment():
     def inquiry_agent(self) -> Agent:
         return Agent(
             config=self.agents_config['inquiry_agent'], # type: ignore[index]
+            tools=[information_and_access_tool, basic_knowledge_tool],
             verbose=True
         )
 
@@ -39,6 +56,7 @@ class LatestAiDevelopment():
     def reporting_agent(self) -> Agent:
         return Agent(
             config=self.agents_config['reporting_agent'], # type: ignore[index]
+            tools=[lease_and_law_tool, information_and_access_tool, basic_knowledge_tool],
             verbose=True
         )
     
