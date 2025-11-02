@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "version": 1,
+    "saved_at": "2025-11-02T06:02:46Z"
+  },
+  "survey": {
+    "budget": {
+      "weekly_min": null,
+      "weekly_max": null,
+      "weekly_total": null,
+      "bills_included": null
+    },
+    "property": {
+      "type": null,
+      "furnished": null,
+      "co_rent": null,
+      "accept_overpriced": null,
+      "accept_small": null
+    },
+    "lifestyle": {
+      "commute": null,
+      "move_in": null,
+      "lease_months": null
+    }
+  }
+}

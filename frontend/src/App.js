@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './App.css';
-import Layout from './Layout';
 import InvitationCodeValidator from './InvitationCodeValidator';
+import ChatbotInterface from './ChatBotInterface';
 import axios from 'axios';
 
 export default function App() {
@@ -142,7 +142,7 @@ export default function App() {
           </header>
           
           <main>
-            <Layout onSubmit={handleSubmit} />
+            <ChatbotInterface onSubmit={handleSubmit} />
             {loading && <p style={{ color: "#667eea" }}>正在提交，请稍候...</p>}
           </main>
         </>

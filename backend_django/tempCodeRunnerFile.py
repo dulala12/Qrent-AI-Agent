@@ -1,0 +1,1 @@
+/limits/invitation/generate/
