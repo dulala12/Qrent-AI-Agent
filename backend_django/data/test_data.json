@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "version": 1,
+    "saved_at": "2025-11-13T05:35:01Z"
+  },
+  "survey": {
+    "budget": {
+      "weekly_min": 400,
+      "weekly_max": 600,
+      "weekly_total": 500,
+      "bills_included": true
+    },
+    "property": {
+      "type": "apartment",
+      "furnished": true,
+      "co_rent": false,
+      "accept_overpriced": false,
+      "accept_small": true
+    },
+    "lifestyle": {
+      "commute": 30,
+      "move_in": "2025-12-01",
+      "lease_months": 12
+    }
+  }
+}

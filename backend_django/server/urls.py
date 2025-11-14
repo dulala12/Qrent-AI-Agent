@@ -16,11 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from survey.views import SurveyView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("survey/", SurveyView.as_view()),
-    path("survey", SurveyView.as_view()),
+    path('', include('survey.urls')),  # 包含survey应用的所有URL
     path('limits/', include('limits.urls')),
 ]

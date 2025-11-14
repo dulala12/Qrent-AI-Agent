@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "version": 1,
+    "saved_at": "2025-11-13T06:25:30Z",
+    "frontend_raw_data": {
+      "university": "新南威尔士大学（UNSW）",
+      "minBudget": "400",
+      "maxBudget": "600",
+      "includeBills": "包含",
+      "commuteTime": "30 分钟",
+      "roomType": "一居室",
+      "sharedRoom": "不愿意",
+      "moveInDate": "2025-12-01",
+      "leaseTerm": "12 个月",
+      "flexibility": [
+        "可以接受稍小的房间面积",
+        "可以接受略旧的装修"
+      ]
+    },
+    "converted_data": {
+      "budgetMin": "400",
+      "budgetMax": "600",
+      "weeklyTotal": "500",
+      "billsIncluded": "包含",
+      "propertyType": "一居室",
+      "furnished": true,
+      "coRent": "no",
+      "commute": "30",
+      "moveIn": "2025-12-01",
+      "leaseMonths": "12",
+      "acceptOverpriced": null,
+      "acceptSmall": "yes",
+      "university": "新南威尔士大学（UNSW）",
+      "flexibility": [
+        "可以接受稍小的房间面积",
+        "可以接受略旧的装修"
+      ]
+    }
+  },
+  "survey": {
+    "budget": {
+      "weekly_min": 400,
+      "weekly_max": 600,
+      "weekly_total": 500,
+      "bills_included": true
+    },
+    "property": {
+      "type": "一居室",
+      "furnished": true,
+      "co_rent": "no",
+      "accept_overpriced": null,
+      "accept_small": "yes"
+    },
+    "lifestyle": {
+      "commute": "30",
+      "move_in": "2025-12-01",
+      "lease_months": 12,
+      "university": "新南威尔士大学（UNSW）",
+      "flexibility": [
+        "可以接受稍小的房间面积",
+        "可以接受略旧的装修"
+      ]
+    }
+  }
+}
