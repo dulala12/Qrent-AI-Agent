@@ -52,8 +52,8 @@ class SurveyView(APIView):
             "filename": file_path.name,
             "path": str(file_path),
             "analysis_id": analysis_id,
-            "progress_url": f"/api/survey/progress/{analysis_id}",
-            "result_url": f"/api/survey/result/{analysis_id}",
+            "progress_url": f"/survey/progress/{analysis_id}",
+            "result_url": f"/survey/result/{analysis_id}",
         })
 
 

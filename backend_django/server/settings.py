@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_crontab',
     'limits',
+    'survey',
 ]
 
 MIDDLEWARE = [
@@ -141,7 +142,7 @@ CORS_ALLOW_HEADERS = [
     "x-csrftoken",
 ]
 
-# Ìí¼ÓCSRFÐÅÈÎµÄÔ´
+# ï¿½ï¿½ï¿½ï¿½CSRFï¿½ï¿½ï¿½Îµï¿½Ô´
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
