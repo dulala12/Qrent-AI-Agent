@@ -42,6 +42,10 @@ INSTALLED_APPS = [
     'django_crontab',
     'limits',
     'survey',
+    # 新增的应用包
+    'verification',
+    'frontend',
+    'ai',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "version": 1,
+    "saved_at": "2025-11-20T08:13:44Z",
+    "frontend_raw_data": {
+      "minBudget": "356",
+      "maxBudget": "523",
+      "includeBills": "不包含",
+      "university": "新南威尔士大学（UNSW）",
+      "commuteTime": "45 分钟",
+      "roomType": "两居室",
+      "moveInDate": "2025/12/19",
+      "leaseTerm": "12 个月"
+    },
+    "converted_data": {
+      "budgetMin": "356",
+      "budgetMax": "523",
+      "weeklyTotal": "439",
+      "billsIncluded": "不包含",
+      "propertyType": "两居室",
+      "furnished": true,
+      "coRent": null,
+      "commute": "45",
+      "moveIn": "2025/12/19",
+      "leaseMonths": "12",
+      "acceptOverpriced": null,
+      "acceptSmall": null,
+      "university": "新南威尔士大学（UNSW）",
+      "flexibility": []
+    }
+  },
+  "survey": {
+    "budget": {
+      "weekly_min": 356,
+      "weekly_max": 523,
+      "weekly_total": 439,
+      "bills_included": false
+    },
+    "property": {
+      "type": "两居室",
+      "furnished": true,
+      "co_rent": null,
+      "accept_overpriced": null,
+      "accept_small": null
+    },
+    "lifestyle": {
+      "commute": "45",
+      "move_in": "2025/12/19",
+      "lease_months": 12,
+      "university": "新南威尔士大学（UNSW）",
+      "flexibility": []
+    }
+  }
+}

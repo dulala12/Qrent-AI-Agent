@@ -2,12 +2,12 @@ from crewai import Agent, Crew, Task, Process
 from latest_ai_development.tools.custom_tool import QrentRAGTool
 
 rag_tool = QrentRAGTool()
-class QrentCrew:
+class LatestAiDevelopment:
     def data_compliance_agent(self) -> Agent:
         return Agent(
             role="数据合规审查专家",
             goal=(
-                "分析{data}文件中的用户租房需求，结合澳洲租房市场实际情况和常识，"
+                "分析{renting_requirements}文件中的用户租房需求，结合澳洲租房市场实际情况和常识，"
                 "识别不合理或不符合市场规律的需求项。"
                 "\n\n"
                 "如需引用外部知识库，请严格通过工具 qrent_rag_search_tool 进行查询：\n"
@@ -37,7 +37,7 @@ class QrentCrew:
         return Agent(
             role="租房需求顾问",
             goal=(
-                "基于用户的{data}需求和澳洲租房市场实际情况，提供专业、清晰且可执行的租房修改建议。"
+                "基于用户的{renting_requirements}需求和澳洲租房市场实际情况，提供专业、清晰且可执行的租房修改建议。"
                 "\n\n"
                 "当你需要额外知识（澳洲租房市场规则、押金要求、区域差异、房型性价比、真实租金水平等），"
                 "必须使用 Qrent RAG 工具进行查询。\n"
@@ -70,7 +70,7 @@ class QrentCrew:
         return Agent(
             role="租房分析报告专家",
             goal=(
-                "基于{data}文件，结合澳洲租房市场常识、真实租金水平、区域安全性、法律规定和 Qrent 知识库内容，"
+                "基于{renting_requirements}文件，结合澳洲租房市场常识、真实租金水平、区域安全性、法律规定和 Qrent 知识库内容，"
                 "生成一份结构化、全面、专业的租房分析报告（Markdown 格式）。"
                 "\n\n"
                 "如果需要查询额外的市场知识、法规、区域差异、押金规范、租期要求、价格参考等信息，"
@@ -103,21 +103,21 @@ class QrentCrew:
 
     def data_compliance_task(self) -> Task:
         return Task(
-            description="分析{data}文件中的用户租房需求，结合澳洲租房市场实际情况和知识库中的信息，识别不合理或不符合市场规律的需求项。",
+            description="分析{renting_requirements}文件中的用户租房需求，结合澳洲租房市场实际情况和知识库中的信息，识别不合理或不符合市场规律的需求项。",
             expected_output="一份详细的不符合项列表，每个项目包含：不符合的具体内容、基于澳洲租房市场实际情况的专业分析。",
             agent=self.data_compliance_agent()
         )
 
     def inquiry_task(self) -> Task:
         return Task(
-            description="根据澳洲租房市场实际情况和知识库中的信息，引导用户修改{data}中的需求，使其更加合理可行。",
-            expected_output="一个符合{data}格式的JSON文件，其中包含经过优化的用户需求，更符合澳洲租房市场的实际情况。",
+            description="根据澳洲租房市场实际情况和知识库中的信息，引导用户修改{renting_requirements}中的需求，使其更加合理可行。",
+            expected_output="一个符合{renting_requirements}格式的JSON文件，其中包含经过优化的用户需求，更符合澳洲租房市场的实际情况。",
             agent=self.inquiry_agent()
         )
 
     def reporting_task(self) -> Task:
         return Task(
-            description="基于{data}文件和知识库中的信息，生成一份全面的租房分析报告。",
+            description="基于{renting_requirements}文件和知识库中的信息，生成一份全面的租房分析报告。",
             expected_output="一份结构化的中文markdown报告，包含以下部分：\n1. 需求分析 - 用户预算和偏好评估\n2. 市场概况 - 澳洲租房市场实际情况\n3. 区域推荐 - 基于用户需求的区域建议\n4. 房型建议 - 性价比分析和房型推荐\n5. 合同指南 - 租期、押金等注意事项\n6. 风险提示 - 租房过程中需要注意的问题\n报告应格式清晰，内容专业，并且完全使用中文。",
             agent=self.reporting_agent()
         )

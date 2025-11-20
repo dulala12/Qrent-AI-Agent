@@ -86,17 +86,23 @@ export default function App() {
                   );
                   
                   if (resultResponse.data.ok) {
-                    setAnalysisResult(resultResponse.data);
+                    // 正确处理嵌套的analysis对象
+                    const responseData = resultResponse.data;
+                    setAnalysisResult(responseData);
                     setSubmissionInfo({
-                      filename: resultResponse.data.filename,
-                      path: resultResponse.data.path,
-                      url: resultResponse.data.url,
+                      filename: responseData.filename || (responseData.analysis && responseData.analysis.filename),
+                      path: responseData.path || (responseData.analysis && responseData.analysis.path),
+                      url: responseData.url || (responseData.analysis && responseData.analysis.url),
                       remainingUses: reportResponse.data.remaining_uses,
                     });
                     clearInterval(resultCheckInterval);
                     setLoading(false);
-                  } else if (resultResponse.data.error) {
-                    setAnalysisResult({ ok: false, error: resultResponse.data.error });
+                  } else if (resultResponse.data.error || (resultResponse.data.analysis && resultResponse.data.analysis.error)) {
+                    setAnalysisResult({ 
+                      ok: false, 
+                      error: resultResponse.data.error || 
+                             (resultResponse.data.analysis && resultResponse.data.analysis.error) 
+                    });
                     clearInterval(resultCheckInterval);
                     setLoading(false);
                   }
@@ -109,11 +115,13 @@ export default function App() {
               // 设置最大检查时间（30分钟）
               setTimeout(() => {
                 clearInterval(resultCheckInterval);
-                setLoading(false);
-                // 如果还在加载状态，表示超时
-                if (loading) {
-                  setAnalysisResult({ ok: false, error: "AI分析超时，请稍后手动查询结果" });
-                }
+                // 使用函数式更新确保获取最新状态
+                setLoading(prevLoading => {
+                  if (prevLoading) {
+                    setAnalysisResult({ ok: false, error: "AI分析超时，请稍后手动查询结果" });
+                  }
+                  return false;
+                });
               }, 1800000);
             } catch (backgroundError) {
               console.error("后台处理结果时出错", backgroundError);
@@ -225,7 +233,7 @@ export default function App() {
               loading={loading}
               submission={submissionInfo}
             />
-            {loading && <p className="analysis-status">正在提交，请稍候…</p>}
+            {/* 移除重复的loading提示，因为AnalysisPanel组件内部已有完整的loading状态处理 */}
           </main>
         </>
       )}

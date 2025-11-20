@@ -19,6 +19,13 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('survey.urls')),  # 包含survey应用的所有URL
+    # 验证码相关接口
+    path('api/verification/', include('verification.urls')),
+    # 前端连接相关接口
+    path('api/frontend/', include('frontend.urls')),
+    # AI分析相关接口
+    path('api/ai/', include('ai.urls')),
+    # 保留原有路由以便向后兼容
     path('limits/', include('limits.urls')),
+    path('', include('survey.urls')),
 ]

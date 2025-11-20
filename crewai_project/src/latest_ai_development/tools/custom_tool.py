@@ -6,6 +6,7 @@ from llama_index.core.settings import Settings
 from llama_index.embeddings.dashscope import DashScopeEmbedding
 import os
 import dotenv
+from pathlib import Path
 
 # ========== 1. 加载 RAG 组件 ==========
 dotenv.load_dotenv()
@@ -16,7 +17,13 @@ Settings.embed_model = DashScopeEmbedding(
     api_key=API_KEY
 )
 
-PERSIST_DIR = "Qrent_knowledge_base"
+# 使用绝对路径来定位知识库，避免路径问题
+# 获取当前文件的绝对路径
+current_file = Path(__file__).resolve()
+# 导航到crewai_project目录下的Qrent_knowledge_base
+project_root = current_file.parents[3]  # ../../.. 导航到crewai_project目录
+PERSIST_DIR = str(project_root / "Qrent_knowledge_base")
+
 storage_context = StorageContext.from_defaults(persist_dir=PERSIST_DIR)
 index = load_index_from_storage(storage_context)
 

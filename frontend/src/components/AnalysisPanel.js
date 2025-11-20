@@ -14,6 +14,10 @@ export default function AnalysisPanel({ result, loading, submission }) {
     return null;
   }
 
+  // 获取分析数据，处理嵌套的analysis对象
+  const analysisData = result.analysis || result;
+  const isSuccessful = result.ok && !analysisData.error;
+  
   return (
     <section className="analysis-panel">
       <h2>AI 分析报告</h2>
@@ -30,21 +34,41 @@ export default function AnalysisPanel({ result, loading, submission }) {
           )}
         </div>
       )}
-      {!result.ok ? (
+      {!isSuccessful ? (
         <p className="analysis-error">
-          未能生成 AI 报告：{result.error || "请稍后再试。"}
+          未能生成 AI 报告：{analysisData.error || result.error || "请稍后再试。"}
         </p>
       ) : (
         <>
-          {result.summary ? (
-            <pre className="analysis-summary">{result.summary}</pre>
+          {analysisData.summary ? (
+            <div className="analysis-summary">
+              <h3>分析摘要</h3>
+              <pre>{analysisData.summary}</pre>
+            </div>
           ) : (
             <p className="analysis-status">AI 未返回摘要内容。</p>
           )}
-          {result.report_markdown && (
+          {analysisData.report_markdown && (
             <details className="analysis-details" open>
               <summary>查看完整报告</summary>
-              <pre>{result.report_markdown}</pre>
+              <div className="report-content">
+                <pre>{analysisData.report_markdown}</pre>
+              </div>
+            </details>
+          )}
+          {analysisData.tasks && analysisData.tasks.length > 0 && (
+            <details className="analysis-details">
+              <summary>任务详情</summary>
+              <div className="tasks-content">
+                {analysisData.tasks.map((task, index) => (
+                  <div key={index} className="task-item">
+                    <h4>{task.task_name || `任务 ${index + 1}`}</h4>
+                    {task.description && <p><strong>描述：</strong>{task.description}</p>}
+                    {task.output && <p><strong>输出：</strong><pre>{task.output}</pre></p>}
+                    {task.status && <p><strong>状态：</strong>{task.status}</p>}
+                  </div>
+                ))}
+              </div>
             </details>
           )}
         </>
